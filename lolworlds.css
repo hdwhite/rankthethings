@@ -1,0 +1,39 @@
+body
+{
+	background:#333333;
+	color:#FFFFFF;
+	text-align:center;
+}
+
+table
+{
+	width:100%;
+}
+
+#wrapper
+{
+	width:600px;
+	margin:auto;
+}
+
+button.team
+{
+	background-color:#FFFFFF;
+	border-radius:12px;
+	font-size:110%;
+	font-weight:bold;
+}
+
+button.unknown
+{
+	background:transparent;
+	border:none;
+	color:#ADD8E6;
+	font-size:120%;
+}
+
+a
+{
+	color:#FFFFFF;
+	font-size:110%;
+}
