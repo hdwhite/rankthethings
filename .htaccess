@@ -1,0 +1,2 @@
+RewriteRule ^NA/?$ index.php?region=NA [L]
+RewriteRule ^EU/?$ index.php?region=EU [L]
