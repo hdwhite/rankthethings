@@ -1,17 +1,4 @@
 <?php
-if(!isset($_SESSION[$region]))
-	$_SESSION[$region] = array();
-if(!isset($_SESSION[$region][$week]))
-{
-	$leftorder = range(0, $maxvotes - 1);
-	shuffle($leftorder);
-	$matchups = array();
-	for($i = 0; $i < count($leftorder) - 1; $i++)
-		$matchups[] = array($leftorder[$i], $leftorder[$i + 1]);
-	$matchups[] = array($leftorder[$maxvotes - 1], $leftorder[0]);
-	shuffle($matchups);
-	$_SESSION[$region][$week] = (object) array('votes' => 0, 'matchups' => $matchups);
-}
 $team1 = $_SESSION[$region][$week]->matchups[$_SESSION[$region][$week]->votes][0];
 $team2 = $_SESSION[$region][$week]->matchups[$_SESSION[$region][$week]->votes][1];
 ?>

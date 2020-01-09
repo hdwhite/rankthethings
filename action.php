@@ -2,6 +2,7 @@
 require_once("dbnames.inc");
 require_once($_dbconfig);
 session_start();
+$sessionid = session_id();
 if($_SERVER['REQUEST_METHOD'] != 'POST')
 {
 	header("Location: $_rootpath");
@@ -36,8 +37,8 @@ if($region == "NA" || $region == "EU")
 		$_SESSION[$region][$week]->votes++;
 	else
 	{
-		$stmt = $mysqli->prepare("INSERT INTO $_db (region, week, winner, loser, ip) VALUES(?, ?, ?, ?, ?)");
-		$stmt->bind_param("sisss", $region, $week, $winnercode, $losercode, $ip);
+		$stmt = $mysqli->prepare("INSERT INTO $_db (region, week, winner, loser, ip, sessionid) VALUES(?, ?, ?, ?, ?, ?)");
+		$stmt->bind_param("sissss", $region, $week, $winnercode, $losercode, $ip, $sessionid);
 		$ip = $_SERVER['REMOTE_ADDR'];
 		if(isset($_POST['button1']))
 		{
@@ -63,3 +64,4 @@ if($region == "NA" || $region == "EU")
 	exit();
 }
 header("Location: $_rootpath");
+?>
