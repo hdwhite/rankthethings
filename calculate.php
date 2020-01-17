@@ -15,6 +15,7 @@ foreach($teams as $curteam)
 	$teams[$curteam["code"]] = $temp;
 }
 
+$runtime = date("Y-m-d H:i:s");
 $query = $mysqli->query("SELECT winner, loser, COUNT(*) AS num FROM $_db WHERE region='$region' AND week='$week' GROUP BY winner, loser");
 while($currow = $query->fetch_assoc())
 	$winmatrix[$currow['winner']][$currow['loser']] = $currow['num'];
@@ -77,4 +78,9 @@ $scale = function($n) use ($multiplier) { return log($n * $multiplier) + 2; };
 $ratings = array_map($scale, $ratings);
 foreach($ratings as $i => $j)
 	echo("$i: $j\n");
+$stmt = $mysqli->prepare("INSERT INTO $_ratingdb (region, week, timestamp, team, rating) VALUES (?, ?, ?, ?, ?)");
+$stmt->bind_param("sissd", $region, $week, $runtime, $curteam, $currating);
+foreach($ratings as $curteam => $currating)
+	$stmt->execute();
+$stmt->close();
 ?>

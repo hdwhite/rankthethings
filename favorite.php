@@ -23,8 +23,9 @@
 					<?php } ?>
 				</table>
 				</div>
-				<p><button class="unknown" type="submit" name="button3">I don't have a favorite team in particular</p>
+				<p><button class="unknown" type="submit" name="button3">I don't have a favorite team in particular</button></p>
 			</form>
+			<p><a href="https://patreon.com/hdwhite" target="_blank">Support me on Patreon!</a></p>
 		</div>
 	</body>
 </html>

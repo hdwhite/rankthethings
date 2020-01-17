@@ -15,7 +15,6 @@ $team2 = $_SESSION[$region][$week]->matchups[$_SESSION[$region][$week]->votes][1
 	<body>
 		<div id="wrapper">
 			<h2>Select which team you believe would win</h2>
-			<?php if($_SESSION[$region][$week]->votes < $maxvotes) { ?>
 			<form method="post" action="action.php">
 				<input type="hidden" name="from" value="<?=$region ?>">
 				<input type="hidden" name="team1" value="<?=$team1 ?>">
@@ -32,11 +31,9 @@ $team2 = $_SESSION[$region][$week]->matchups[$_SESSION[$region][$week]->votes][1
 						<td style="text-align:center;"><a href="https://lol.gamepedia.com/<?=$teams[$team2]['name'] ?>" target="_blank">Gamepedia page</a></td>
 					</tr>
 				</table>
-				<p><button class="unknown" type="submit" name="button3">I don't know enough about these teams to make a decision</p>
+				<p><button class="unknown" type="submit" name="button3">I don't know enough about these teams to make a decision</button></p>
 			</form>
-			<?php } else { ?>
-			<h2>Thank you for your participation!</h2>
-			<?php } ?>
+			<p><a href="https://patreon.com/hdwhite" target="_blank">Support me on Patreon!</a></p>
 		</div>
 	</body>
 </html>

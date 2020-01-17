@@ -34,6 +34,7 @@ if($region == "NA" || $region == "EU")
 			break;
 		}
 	}
+	$_SESSION[$region][$week]->favorite = "None";
 
 	$stmt->close();
 	header("Location: $_rootpath/$region");

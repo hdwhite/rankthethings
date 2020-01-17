@@ -25,6 +25,7 @@
 					</tr>
 				</table>
 			</form>
+			<p><a href="https://patreon.com/hdwhite" target="_blank">Support me on Patreon!</a></p>
 		</div>
 	</body>
 </html>

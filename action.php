@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] != 'POST')
 
 $region = $_POST['from'];
 
-if($region == "default")
+if($region == "default" || $region == "ranking")
 {
 	if(isset($_POST['button1']))
 	{
