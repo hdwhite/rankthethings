@@ -1,5 +1,5 @@
 <?php
-$query = $mysqli->query("SELECT team, rating, MAX(timestamp) FROM $_ratingdb WHERE region='$region' AND week='$week' GROUP BY team ORDER BY rating DESC");
+$query = $mysqli->query("SELECT team, rating FROM $_ratingdb WHERE region='$region' AND week='$week' ORDER BY timestamp DESC, rating DESC LIMIT 10");
 $ratings = array();
 while($curteam = $query->fetch_assoc())
 	$ratings[$curteam['team']] = $curteam['rating'];
@@ -30,7 +30,7 @@ while($curteam = $query->fetch_assoc())
 					foreach($teams as $t)
 						if($t['code'] ==  $curteam)
 							$fullname = $t['name'];
-					echo("<tr class=\"row" . ++$i . "\"><th>$i</th><td style=\"width: 200px\">$fullname</td><td>" . round($currating, 3) . "</td></tr>");
+					printf("<tr class=\"row%d\"><th>%d</th><td style=\"width: 200px\">%s</td><td>%.3f</td></tr>", ++$i, $i, $fullname, $currating);
 				}
 				?>
 			</table>
