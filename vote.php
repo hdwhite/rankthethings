@@ -14,7 +14,7 @@ $team2 = $_SESSION[$region][$week]->matchups[$_SESSION[$region][$week]->votes][1
 	</head>
 	<body>
 		<div id="wrapper">
-			<h2>Select which team you believe would win</h2>
+			<h2>Select which team you think is better</h2>
 			<form method="post" action="action.php">
 				<input type="hidden" name="from" value="<?=$region ?>">
 				<input type="hidden" name="team1" value="<?=$team1 ?>">
