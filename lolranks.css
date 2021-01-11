@@ -3,6 +3,7 @@ body
 	background:#333333;
 	color:#FFFFFF;
 	text-align:center;
+	font-family: Verdana;
 }
 
 table
@@ -12,8 +13,13 @@ table
 
 #wrapper
 {
-	width:600px;
+	width:660px;
 	margin:auto;
+}
+
+button
+{
+	cursor: pointer;
 }
 
 button.team
@@ -22,13 +28,15 @@ button.team
 	border-radius:12px;
 	font-size:110%;
 	font-weight:bold;
+	padding: 20px 23px 0px;
+	line-height:1.5;
 }
 
 button.unknown
 {
-	background:transparent;
-	border:none;
-	color:#ADD8E6;
+	background-color:#999999;
+	color:royalblue;
+	border-radius:12px;
 	font-size:120%;
 }
 
@@ -36,4 +44,9 @@ a
 {
 	color:#FFFFFF;
 	font-size:110%;
+}
+
+p.patreon
+{
+	font-size:small;
 }

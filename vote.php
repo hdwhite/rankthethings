@@ -34,7 +34,7 @@ $team2 = $_SESSION[$region][$week]->matchups[$_SESSION[$region][$week]->votes][1
 				</table>
 				<p><button class="unknown" type="submit" name="button3">I don't know enough about these teams to make a decision</button></p>
 			</form>
-			<p><a href="https://patreon.com/hdwhite" target="_blank">Support me on Patreon!</a></p>
+			<p class="patreon"><a href="https://patreon.com/hdwhite" target="_blank">Support me on Patreon!</a></p>
 		</div>
 	</body>
 </html>
