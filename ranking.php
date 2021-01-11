@@ -45,7 +45,7 @@ while($curteam = $query->fetch_assoc())
 					<button class="team" type="submit" name="button2"><img src="images/LEC.png" height="240" width="240"><br>Switch to EU</button></td>
 				<?php } ?>
 			</form>
-			<p><a href="https://patreon.com/hdwhite" target="_blank">Support me on Patreon!</a></p>
+			<p class="patreon"><a href="https://patreon.com/hdwhite" target="_blank">Support me on Patreon!</a></p>
 		</div>
 	</body>
 </html>
