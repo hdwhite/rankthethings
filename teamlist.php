@@ -1,4 +1,5 @@
 <?php
+# Here we keep track of the current week as well as which teams are in which region.
 $week = 1;
 if($region == "NA")
 {

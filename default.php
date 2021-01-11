@@ -1,3 +1,7 @@
+<?php
+# The main index page or if an invalid region is selected
+# It just has buttons for each region's page
+?>
 <html>
 	<head>
 		<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/analytics.php"); ?>

@@ -1,3 +1,7 @@
+<?php
+# The user gets to (optionally) select a team they support.
+# This is mainly done for analysis purposes.
+?>
 <html>
 	<head>
 		<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/analytics.php"); ?>

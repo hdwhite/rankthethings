@@ -1,4 +1,6 @@
 <?php
+# Here we display the rankings
+# To prevent server load, the calulations are not done every time this page is loaded
 $query = $mysqli->query("SELECT team, rating FROM $_ratingdb WHERE region='$region' AND week='$week' ORDER BY timestamp DESC, rating DESC LIMIT 10");
 $ratings = array();
 while($curteam = $query->fetch_assoc())

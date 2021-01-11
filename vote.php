@@ -1,4 +1,5 @@
 <?php
+# The vote page for each matchup. Here we load the teams and have trhe user vote on them.
 $team1 = $_SESSION[$region][$week]->matchups[$_SESSION[$region][$week]->votes][0];
 $team2 = $_SESSION[$region][$week]->matchups[$_SESSION[$region][$week]->votes][1];
 ?>

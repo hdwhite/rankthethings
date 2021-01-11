@@ -1,4 +1,5 @@
 <?php
+# This page is called when a user pushes a button.
 require_once("dbnames.inc");
 require_once($_dbconfig);
 session_start();
@@ -11,6 +12,7 @@ if($_SERVER['REQUEST_METHOD'] != 'POST')
 
 $region = $_POST['from'];
 
+# If we're going to a region, we direct the user there. 
 if($region == "default" || $region == "ranking")
 {
 	if(isset($_POST['button1']))
@@ -25,18 +27,23 @@ if($region == "default" || $region == "ranking")
 	}
 }
 
+# Otherwise it's a vote
 require_once("teamlist.php");
 if($region == "NA" || $region == "EU")
 {
+	# If there are too many votes or the vote isn't there, get out of here
 	if(!isset($_SESSION[$region][$week]) || $_SESSION[$region][$week]->votes >= $maxvotes)
 	{
 		header("Location: $_rootpath/$region");
 		exit();
 	}
+
+	# If you skip, then just add one to the number of votes
 	if(isset($_POST['button3']))
 		$_SESSION[$region][$week]->votes++;
 	else
 	{
+		# Depending on who the user has as a winner, insert the result into the database
 		$stmt = $mysqli->prepare("INSERT INTO $_db (region, week, winner, loser, ip, sessionid) VALUES(?, ?, ?, ?, ?, ?)");
 		$stmt->bind_param("sissss", $region, $week, $winnercode, $losercode, $ip, $sessionid);
 		$ip = $_SERVER['REMOTE_ADDR'];
@@ -60,6 +67,7 @@ if($region == "NA" || $region == "EU")
 		}
 		$stmt->close();
 	}
+	# Now go back to where they (hopefully) came from
 	header("Location: $_rootpath/$region");
 	exit();
 }
