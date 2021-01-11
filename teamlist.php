@@ -17,13 +17,13 @@ if($region == "NA")
 }
 elseif($region == "EU")
 {
-	$teams = [["name" => "Excel Esports",  "code" => "XL"],
+	$teams = [["name" => "Astralis",       "code" => "AST"],
+	          ["name" => "Excel Esports",  "code" => "XL"],
 			  ["name" => "FC Schalke 04",  "code" => "S04"],
 			  ["name" => "Fnatic",         "code" => "FNC"],
 			  ["name" => "G2 Esports",     "code" => "G2"],
 			  ["name" => "MAD Lions",      "code" => "MAD"],
 			  ["name" => "Misfits Gaming", "code" => "MSF"],
-			  ["name" => "Origen",         "code" => "OG"],
 			  ["name" => "Rogue",          "code" => "RGE"],
 			  ["name" => "SK Gaming",      "code" => "SK"],
 			  ["name" => "Team Vitality",  "code" => "VIT"]];
