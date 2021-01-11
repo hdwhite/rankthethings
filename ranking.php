@@ -24,6 +24,7 @@ while($curteam = $query->fetch_assoc())
 	<body>
 		<div id="wrapper">
 			<h2>Current Power Rankings</h2>
+			<p class="patreon">(Note: Rankings will not be accurate for the first hour or so. Please check back later for numbers that make more sense.)</p>
 			<table>
 				<?php
 				$i = 0;
@@ -37,14 +38,14 @@ while($curteam = $query->fetch_assoc())
 				?>
 			</table>
 			<h2>Thank you for participating!</h2>
-			<form method="post" action="action.php">
+<!--			<form method="post" action="action.php">
 				<input type="hidden" name="from" value="ranking">
 				<?php if($region == "EU") { ?>
 					<button class="team" type="submit" name="button1"><img src="images/LCS.png" height="240" width="240"><br>Switch to NA</button></td>
 				<?php } elseif($region == "NA") { ?>
 					<button class="team" type="submit" name="button2"><img src="images/LEC.png" height="240" width="240"><br>Switch to EU</button></td>
 				<?php } ?>
-			</form>
+			</form> -->
 			<p class="patreon"><a href="https://patreon.com/hdwhite" target="_blank">Support me on Patreon!</a></p>
 		</div>
 	</body>
