@@ -1,6 +1,7 @@
 <?php
 # Here we keep track of the current week as well as which teams are in which region.
 $week = 1;
+$active = 0;
 if($region == "NA")
 {
 	$teams = [["name" => "100 Thieves",          "code" => "100"],

@@ -27,9 +27,9 @@ if($region == "None")
 	require_once("default.php");
 else
 {
-	require_once("teamlist.php");
 	# Here we pre-generate a list of 10 matchups for each user
 	# Essentially we shuffle up the list of teams and have each one match up with the two adjacent ones
+	require_once("teamlist.php");
 	if(!isset($_SESSION[$region]))
 		$_SESSION[$region] = array();
 	if(!isset($_SESSION[$region][$week]))
@@ -45,7 +45,9 @@ else
 	}
 
 	# Now we need to figure out how what page to show depending on where they are in the process
-	if($_SESSION[$region][$week]->votes < $maxvotes)
+	if($active === 0)
+		require_once("ranking.php");
+	elseif($_SESSION[$region][$week]->votes < $maxvotes)
 		require_once("vote.php");
 	elseif($_SESSION[$region][$week]->favorite === "")
 		require_once("favorite.php");

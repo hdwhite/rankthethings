@@ -31,8 +31,8 @@ if($region == "default" || $region == "ranking")
 require_once("teamlist.php");
 if($region == "NA" || $region == "EU")
 {
-	# If there are too many votes or the vote isn't there, get out of here
-	if(!isset($_SESSION[$region][$week]) || $_SESSION[$region][$week]->votes >= $maxvotes)
+	# If we aren't accepting votes, there are too many votes, or the vote isn't there, get out of here
+	if($active == 0 || !isset($_SESSION[$region][$week]) || $_SESSION[$region][$week]->votes >= $maxvotes)
 	{
 		header("Location: $_rootpath/$region");
 		exit();
