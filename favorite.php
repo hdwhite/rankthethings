@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<div id="wrapper">
-			<h2>What team would you want to win the spring split?</h2>
+			<h2>What team would you want to win the Lock In Tournament?</h2>
 			<form method="post" action="favoriteaction.php">
 				<input type="hidden" name="from" value="<?=$region ?>">
 				<div style="margin:-50px 0">

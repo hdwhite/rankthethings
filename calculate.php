@@ -92,6 +92,10 @@ while(abs($average) > pow(10, -10))
 # Taking the log to make the numbers more human-readable
 $scale = function($n) use ($multiplier) { return log($n * $multiplier) + 2; };
 $ratings = array_map($scale, $ratings);
+
+echo("--- New run at $runtime ---");
+print_r($winmatrix);
+print_r($gamesmatrix);
 foreach($ratings as $i => $j)
 	echo("$i: $j\n");
 

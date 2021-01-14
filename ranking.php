@@ -24,7 +24,7 @@ while($curteam = $query->fetch_assoc())
 	<body>
 		<div id="wrapper">
 			<h2>Current Power Rankings</h2>
-			<p class="patreon">(Note: Rankings will not be accurate for the first hour or so. Please check back later for numbers that make more sense.)</p>
+<!--			<p class="patreon">(Note: Rankings will not be accurate for the first hour or so. Please check back later for numbers that make more sense.)</p> -->
 			<table>
 				<?php
 				$i = 0;

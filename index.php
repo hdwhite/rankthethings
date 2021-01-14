@@ -19,7 +19,7 @@ switch ($regioninput)
 	default:
 		$region = "None";
 }
-session_set_cookie_params(90*24*60*60);
+session_set_cookie_params(365*24*60*60);
 session_start();
 
 # Now we figure out what page to display
