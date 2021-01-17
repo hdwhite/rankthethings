@@ -20,7 +20,7 @@
 					<tr>
 						<td style="text-align:left;"><button class="team" type="submit" name="button1"><img src="images/LCS.png" height="240" width="240"><br>North America (LCS)</button></td>
 						<td width="99%"></td>
-						<td style="text-align:right;"><button class="team" type="submit" name="button2" disabled><img src="images/LEC.png" height="240" width="240"><br>Europe (Coming Soon)</button></td>
+						<td style="text-align:right;"><button class="team" type="submit" name="button2"><img src="images/LEC.png" height="240" width="240"><br>Europe (LEC)</button></td>
 					</tr>
 						<tr>
 						<td style="text-align:center;"><a href="https://lol.gamepedia.com/LCS/2021_Season/Lock_In" target="_blank">Gamepedia page</a></td>

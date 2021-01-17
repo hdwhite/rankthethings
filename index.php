@@ -15,7 +15,7 @@ switch ($regioninput)
 		break;
 	case "EU":
 		$region = "EU";
-//		break;
+		break;
 	default:
 		$region = "None";
 }

@@ -1,12 +1,12 @@
 <?php
 # Here we keep track of the current week as well as which teams are in which region.
-$week = 2101;
+$week = 2102;
 $active = 0;
 if($region == "NA")
 {
 	$teams = [["name" => "100 Thieves",          "code" => "100"],
 			  ["name" => "Cloud9",               "code" => "C9"],
-			  ["name" => "Counter Logic Gaming", "code" => "CLG"],
+			  ["name" => "CLG",                  "code" => "CLG"],
 			  ["name" => "Dignitas",             "code" => "DIG"],
 			  ["name" => "Evil Geniuses",        "code" => "EG"],
 			  ["name" => "FlyQuest",             "code" => "FQ"],
