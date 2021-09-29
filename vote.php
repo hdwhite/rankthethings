@@ -25,7 +25,7 @@ $entry2 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][
 		<div id="wrapper">
 			<h2>Select which thing you like best</h2>
 			<form method="post" action="action.php">
-				<input type="hidden" name="week" value="<?=$week ?>">
+				<input type="hidden" name="from" value="<?=$week ?>">
 				<input type="hidden" name="entry1" value="<?=$team1 ?>">
 				<input type="hidden" name="entry2" value="<?=$team2 ?>">
 				<table>
