@@ -1,4 +1,12 @@
 <?php
+require_once("data/$week/matchdata.inc");
+
+// If this is their first time here, create a matchup list
+if(!isset($_SESSION['ranks']))
+	$_SESSION['ranks'] = array();
+if(!isset($_SESSION['ranks'][$week]))
+	require_once("generate_matchups.php");
+
 # The vote page for each matchup. Here we load the teams and have trhe user vote on them.
 $team1 = $_SESSION[$region][$week]->matchups[$_SESSION[$region][$week]->votes][0];
 $team2 = $_SESSION[$region][$week]->matchups[$_SESSION[$region][$week]->votes][1];
