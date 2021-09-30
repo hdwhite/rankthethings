@@ -1,7 +1,7 @@
 <?php
 // Index page. All the pages call this one.
 
-//TODO: Figure out what week it is
+require_once("getweek.php");
 
 // Include database stuff.
 require_once("dbnames.inc");
