@@ -11,7 +11,7 @@ while($curteam = $query->fetch_assoc())
 		<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/analytics.php"); ?>
 		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 		<style type="text/css">
-			@import url("lolranks.css");
+			@import url("rankthethings.css");
 			table { margin-left: auto; margin-right: auto; width: auto; }
 			td,th { padding: 2px 10px; }
 			th { text-align: right; }

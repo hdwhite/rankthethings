@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] != 'POST')
 	exit();
 }
 
-$region = $_POST['from'];
+$from = $_POST['from'];
 
 # If we're going to a region, we direct the user there. 
 if($region == "default" || $region == "ranking")
@@ -26,49 +26,49 @@ if($region == "default" || $region == "ranking")
 		exit();
 	}
 }
-
-# Otherwise it's a vote
-require_once("teamlist.php");
-if($region == "NA" || $region == "EU")
+// Only accept votes if it's from the correct week
+elseif($from == $week)
 {
-	# If we aren't accepting votes, there are too many votes, or the vote isn't there, get out of here
-	if($active == 0 || !isset($_SESSION[$region][$week]) || $_SESSION[$region][$week]->votes >= $maxvotes)
+	require_once("data/$week/matchdata.inc");
+	
+	// If there are too many votes or the vote isn't there, get out of here
+	if(!isset($_SESSION['ranks'][$week]) || $_SESSION[$region][$week]->votes >= $maxvotes)
 	{
-		header("Location: $_rootpath/$region");
+		header("Location: $_rootpath/vote");
 		exit();
 	}
 
-	# If you skip, then just add one to the number of votes
+	// If you skip, then just add one to the number of votes
 	if(isset($_POST['button3']))
 		$_SESSION[$region][$week]->votes++;
 	else
 	{
-		# Depending on who the user has as a winner, insert the result into the database
-		$stmt = $mysqli->prepare("INSERT INTO $_db (region, week, winner, loser, ip, sessionid) VALUES(?, ?, ?, ?, ?, ?)");
-		$stmt->bind_param("sissss", $region, $week, $winnercode, $losercode, $ip, $sessionid);
+		// Depending on who the user has as a winner, insert the result into the database
+		$stmt = $mysqli->prepare("INSERT INTO $_db (week, winner, loser, ip, sessionid) VALUES(?, ?, ?, ?, ?)");
+		$stmt->bind_param("issss", $week, $winnercode, $losercode, $ip, $sessionid);
 		$ip = $_SERVER['REMOTE_ADDR'];
 		if(isset($_POST['button1']))
 		{
-			$winner = $_POST['team1'];
+			$winner = $_POST['entry1'];
 			$winnercode = $teams[$winner]['code'];
-			$loser = $_POST['team2'];
+			$loser = $_POST['entry2'];
 			$losercode = $teams[$loser]['code'];
 			$stmt->execute();
-			$_SESSION[$region][$week]->votes++;
+			$_SESSION['ranks'][$week]->votes++;
 		}
 		elseif(isset($_POST['button2']))
 		{
-			$winner = $_POST['team2'];
+			$winner = $_POST['entry2'];
 			$winnercode = $teams[$winner]['code'];
-			$loser = $_POST['team1'];
+			$loser = $_POST['entry1'];
 			$losercode = $teams[$loser]['code'];
 			$stmt->execute();
-			$_SESSION[$region][$week]->votes++;
+			$_SESSION['ranks'][$week]->votes++;
 		}
 		$stmt->close();
 	}
-	# Now go back to where they (hopefully) came from
-	header("Location: $_rootpath/$region");
+	// Now go back to where they (hopefully) came from
+	header("Location: $_rootpath/$vote");
 	exit();
 }
 header("Location: $_rootpath");

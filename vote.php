@@ -7,6 +7,10 @@ if(!isset($_SESSION['ranks']))
 if(!isset($_SESSION['ranks'][$week]))
 	require_once("generate_matchups.php");
 
+// If they've voted the max number of times, go to rankings
+if($_SESSION['ranks'][$week]->votes >= $maxvotes)
+	header("Location: $_rootpath/rankings");
+
 # The vote page for each matchup. Here we load the entrants and have the user vote on them.
 $entry1 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][0];
 $entry2 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][1];
