@@ -17,8 +17,10 @@ switch ($urlarray[2])
 	case "rankings":
 		$page = "rankings";
 		break;
+	case "faq":
+		$page = "faq";
 	default:
-		$page = "index";
+		$page = "vote";
 }
 session_set_cookie_params(365*24*60*60);
 session_start();
@@ -28,6 +30,8 @@ if($page == "index")
 	require_once("default.php");
 elseif($page == "vote")
 	require_once("vote.php");
+elseif($page == "faq")
+	require_once("`faq.php");
 else
 	require_once("rankings.php");
 ?>
