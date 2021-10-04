@@ -5,7 +5,7 @@
 	// We start by shuffling a list of size equal to the number of entries
 	$numentries = count($entrants);
 	$remaining = $maxvotes;
-	$leftorder = range(0, $numentries);
+	$leftorder = range(0, $numentries - 1);
 	shuffle($leftorder);
 	$matchups = array();
 

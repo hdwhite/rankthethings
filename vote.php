@@ -30,8 +30,8 @@ $entry2 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][
 			<h2><?=$topic ?></h2>
 			<form method="post" action="action.php">
 				<input type="hidden" name="from" value="<?=$week ?>">
-				<input type="hidden" name="entry1" value="<?=$team1 ?>">
-				<input type="hidden" name="entry2" value="<?=$team2 ?>">
+				<input type="hidden" name="entry1" value="<?=$entry1 ?>">
+				<input type="hidden" name="entry2" value="<?=$entry2 ?>">
 				<table>
 					<tr>
 						<td style="text-align:left;"><button class="entry" type="submit" name="button1"><img src="data/<?=$week ?>/<?=$entrants[$entry1]['code'] ?>.png" height="240" width="240"><br><?=$entrants[$entry1]['name'] ?></button></td>
