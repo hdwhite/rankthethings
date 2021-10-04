@@ -27,22 +27,22 @@ $entry2 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][
 	</head>
 	<body>
 		<div id="wrapper">
-			<h2>Select which thing you like best</h2>
+			<h2><?=$topic ?></h2>
 			<form method="post" action="action.php">
 				<input type="hidden" name="from" value="<?=$week ?>">
 				<input type="hidden" name="entry1" value="<?=$team1 ?>">
 				<input type="hidden" name="entry2" value="<?=$team2 ?>">
 				<table>
 					<tr>
-						<td style="text-align:left;"><button class="entry" type="submit" name="button1"><img src="images/<?=$entries[$entry1]['code'] ?>.png" height="240" width="240"><br><?=$entries[$entry1]['name'] ?></button></td>
+						<td style="text-align:left;"><button class="entry" type="submit" name="button1"><img src="data/<?=$week ?>/<?=$entrants[$entry1]['code'] ?>.png" height="240" width="240"><br><?=$entrants[$entry1]['name'] ?></button></td>
 						<td width="99%"></td>
-						<td style="text-align:right;"><button class="entry" type="submit" name="button2"><img src="images/<?=$entries[$entry2]['code'] ?>.png" height="240" width="240"><br><?=$entries[$entry2]['name'] ?></button></td>
+						<td style="text-align:right;"><button class="entry" type="submit" name="button2"><img src="data/<?=$week ?>/<?=$entrants[$entry2]['code'] ?>.png" height="240" width="240"><br><?=$entrants[$entry2]['name'] ?></button></td>
 					</tr>
 					<?php if($haslinks == 1) { ?>
 					<tr>
-						<td style="text-align:center;"><a href="https://en.wikipedia.org/wiki/<?=$teams[$team1]['name'] ?>" target="_blank">Wikipedia page</a></td>
+						<td style="text-align:center;"><a href="<?=$entrants[$team1]['name'] ?>" target="_blank">More information</a></td>
 						<td width="99%"></td>
-						<td style="text-align:center;"><a href="https://en.wikipedia.org/wiki/<?=$teams[$team2]['name'] ?>" target="_blank">Wikipedia page</a></td>
+						<td style="text-align:center;"><a href="<?=$entrants[$team2]['name'] ?>" target="_blank">More information</a></td>
 					</tr>
 					<?php } ?>
 				</table>
