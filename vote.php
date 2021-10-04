@@ -48,7 +48,6 @@ $entry2 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][
 				</table>
 				<p><button class="unknown" type="submit" name="button3">I don't know enough about these things to make a decision</button></p>
 			</form>
-			<p class="patreon"><a href="https://patreon.com/hdwhite" target="_blank">Support me on Patreon!</a></p>
 		</div>
 	</body>
 </html>

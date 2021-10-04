@@ -30,14 +30,14 @@ while($curteam = $query->fetch_assoc())
 				$i = 0;
 				foreach($ratings as $curentry => $currating)
 				{
-					foreach($entries as $e)
+					foreach($entrants as $e)
 						if($e['code'] ==  $curentry)
 							$fullname = $e['name'];
 					printf("<tr class=\"row%d\"><th>%d</th><td style=\"width: 200px\">%s</td><td>%.3f</td></tr>", ++$i, $i, $fullname, $currating);
 				}
 				?>
 			</table>
-			<p class="patreon">Rankings are likely to fluctuate, especially early in the week, so be sure to check back Monday for final results and another series of votes.<1/p>
+			<p class="patreon">Rankings are likely to fluctuate, especially early in the week, so be sure to check back Monday for final results and another series of votes.</p>
 			<p class="patreon"><a href="https://patreon.com/hdwhite" target="_blank">Support me on Patreon!</a></p>
 		</div>
 	</body>

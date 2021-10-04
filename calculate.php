@@ -5,7 +5,7 @@ require_once("dbnames.inc");
 require_once($_dbconfig);
 
 // This ensures that it's not done via browser
-if($argc > 0)
+if($argc < 1)
 	exit();
 require_once("getweek.php");
 require_once("data/$week/matchdata.inc");

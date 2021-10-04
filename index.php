@@ -31,7 +31,7 @@ if($page == "index")
 elseif($page == "vote")
 	require_once("vote.php");
 elseif($page == "faq")
-	require_once("`faq.php");
+	require_once("faq.php");
 else
-	require_once("rankings.php");
+	require_once("ranking.php");
 ?>
