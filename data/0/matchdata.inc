@@ -16,8 +16,8 @@ $entrants = [
 	["name" => "Hot sauce", "code" => "hot_sauce"],
 	["name" => "Jalapeno peppers", "code" => "jalapeno_pepper"],
 	["name" => "Meatballs", "code" => "meatball"],
-	["name" => "Mushrooms", "code" => "mushrooms"],
-	["name" => "Onions", "code" => "onions"],
+	["name" => "Mushrooms", "code" => "mushroom"],
+	["name" => "Onions", "code" => "onion"],
 	["name" => "Pepperoni", "code" => "pepperoni"],
 	["name" => "Pineapple", "code" => "pineapple"],
 	["name" => "Salami", "code" => "salami"],
@@ -30,4 +30,5 @@ $entrants = [
 $maxvotes = 50;
 $topic = "Which pizza topping is better?";
 $haslinks = 0;
+$extension = "jpg";
 ?>

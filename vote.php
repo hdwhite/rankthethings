@@ -34,9 +34,9 @@ $entry2 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][
 				<input type="hidden" name="entry2" value="<?=$entry2 ?>">
 				<table>
 					<tr>
-						<td style="text-align:left;"><button class="entry" type="submit" name="button1"><img src="data/<?=$week ?>/<?=$entrants[$entry1]['code'] ?>.png" height="240" width="240"><br><?=$entrants[$entry1]['name'] ?></button></td>
+						<td style="text-align:left;"><button class="entry" type="submit" name="button1"><img src="data/<?=$week ?>/<?=$entrants[$entry1]['code'] ?>.<?=$extension ?>" height="240" width="240"><br><?=$entrants[$entry1]['name'] ?></button></td>
 						<td width="99%"></td>
-						<td style="text-align:right;"><button class="entry" type="submit" name="button2"><img src="data/<?=$week ?>/<?=$entrants[$entry2]['code'] ?>.png" height="240" width="240"><br><?=$entrants[$entry2]['name'] ?></button></td>
+						<td style="text-align:right;"><button class="entry" type="submit" name="button2"><img src="data/<?=$week ?>/<?=$entrants[$entry2]['code'] ?>.<?=$extension ?>" height="240" width="240"><br><?=$entrants[$entry2]['name'] ?></button></td>
 					</tr>
 					<?php if($haslinks == 1) { ?>
 					<tr>
