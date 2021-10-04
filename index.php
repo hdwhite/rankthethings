@@ -19,6 +19,7 @@ switch ($urlarray[2])
 		break;
 	case "faq":
 		$page = "faq";
+		break;
 	default:
 		$page = "vote";
 }
