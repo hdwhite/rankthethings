@@ -16,7 +16,7 @@ foreach($entrants as $curentry)
 	$temp = array();
 	foreach($entrants as $secondentry)
 		$temp[$secondentry["code"]] = 0;
-	$entrants[$curentry["code"]] = $temp;
+	$winmatrix[$curentry["code"]] = $temp;
 }
 
 // Here we get the number of times each entry beat another in the current week, and add it to the win matrix
@@ -96,6 +96,8 @@ $ratings = array_map($scale, $ratings);
 echo("--- New run at $runtime ---");
 print_r($winmatrix);
 print_r($gamesmatrix);
+
+arsort($ratings);
 foreach($ratings as $i => $j)
 	echo("$i: $j\n");
 

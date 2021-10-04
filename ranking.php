@@ -37,6 +37,9 @@ while($curteam = $query->fetch_assoc())
 				}
 				?>
 			</table>
+			<?php if(!isset($_SESSION['ranks']) || !isset($_SESSION['ranks'][$week]) || $_SESSION['ranks'][$week]->votes < $maxvotes) { ?>
+			<p><a href="<?=$_rootpath ?>/vote">Take me back to the voting</a></p>
+			<?php } ?>
 			<p class="patreon">Rankings are likely to fluctuate, especially early in the week, so be sure to check back Monday for final results and another series of votes.</p>
 			<p class="patreon"><a href="<?=$_rootpath ?>/faq" target="_blank">Frequently Asked Questions</a></p>
 			<p class="patreon"><a href="https://patreon.com/hdwhite" target="_blank">Support me on Patreon!</a></p>

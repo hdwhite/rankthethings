@@ -23,7 +23,7 @@ $entry2 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][
 		<style type="text/css">
 			@import url("rankthethings.css");
 		</style>
-		<title>Rank All the Things!</title>
+		<title><?=$topic ?> - Rank All the Things!</title>
 	</head>
 	<body>
 		<div id="wrapper">
@@ -49,6 +49,7 @@ $entry2 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][
 				<p><button class="unknown" type="submit" name="button3">I don't know enough about these things to make a decision</button></p>
 			</form>
 			<p class="patreon"><a href="<?=$_rootpath ?>/faq" target="_blank">Frequently Asked Questions</a></p>
+			<p class="patreon"><a href="<?=$_rootpath ?>/rankings" target="_blank">Current rankings</a></p>
 		</div>
 	</body>
 </html>
