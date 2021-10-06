@@ -1,5 +1,7 @@
+<!doctype html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/analytics.php"); ?>
 		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 		<style type="text/css">

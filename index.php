@@ -6,7 +6,7 @@ require_once("getweek.php");
 // Include database stuff.
 require_once("dbnames.inc");
 require_once($_dbconfig);
-$urlarray = explode("/", $_SERVER['REQUEST_URI']);
+$urlarray = explode("/", str_replace(explode("/", $_rootpath, 4)[3], "", $_SERVER['REQUEST_URI']));
 
 // We need to figure out which page to bring up
 switch ($urlarray[2])

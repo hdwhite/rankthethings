@@ -16,8 +16,10 @@ $entry1 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][
 $entry2 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][1];
 ?>
 
+<!doctype html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/analytics.php"); ?>
 		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 		<style type="text/css">
@@ -32,20 +34,20 @@ $entry2 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][
 				<input type="hidden" name="from" value="<?=$week ?>">
 				<input type="hidden" name="entry1" value="<?=$entry1 ?>">
 				<input type="hidden" name="entry2" value="<?=$entry2 ?>">
-				<table>
-					<tr>
-						<td style="text-align:left;"><button class="entry" type="submit" name="button1"><img src="data/<?=$week ?>/<?=$entrants[$entry1]['code'] ?>.<?=$extension ?>" height="240" width="240"><br><?=$entrants[$entry1]['name'] ?></button></td>
-						<td width="99%"></td>
-						<td style="text-align:right;"><button class="entry" type="submit" name="button2"><img src="data/<?=$week ?>/<?=$entrants[$entry2]['code'] ?>.<?=$extension ?>" height="240" width="240"><br><?=$entrants[$entry2]['name'] ?></button></td>
-					</tr>
-					<?php if($haslinks == 1) { ?>
-					<tr>
-						<td style="text-align:center;"><a href="<?=$entrants[$team1]['name'] ?>" target="_blank">More information</a></td>
-						<td width="99%"></td>
-						<td style="text-align:center;"><a href="<?=$entrants[$team2]['name'] ?>" target="_blank">More information</a></td>
-					</tr>
-					<?php } ?>
-				</table>
+				<div class="flexy">
+					<div class="flexobject">
+						<button class="entry" type="submit" name="button1"><img src="data/<?=$week ?>/<?=$entrants[$entry1]['code'] ?>.<?=$extension ?>" height="240" width="240"><br><?=$entrants[$entry1]['name'] ?></button>
+						<?php if($haslinks == 1) { ?>
+						<br><a href="<?=$entrants[$team1]['name'] ?>" target="_blank">More information</a>
+						<?php } ?>
+					</div>
+					<div class="flexobject">
+						<button class="entry" type="submit" name="button2"><img src="data/<?=$week ?>/<?=$entrants[$entry2]['code'] ?>.<?=$extension ?>" height="240" width="240"><br><?=$entrants[$entry2]['name'] ?></button>
+						<?php if($haslinks == 1) { ?>
+						<br><a href="<?=$entrants[$team2]['name'] ?>" target="_blank">More information</a>
+						<?php } ?>
+					</div>
+				</div>
 				<p><button class="unknown" type="submit" name="button3">I don't know enough about these things to make a decision</button></p>
 			</form>
 			<p class="patreon"><a href="<?=$_rootpath ?>/faq" target="_blank">Frequently Asked Questions</a></p>

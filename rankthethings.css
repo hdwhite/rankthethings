@@ -6,6 +6,17 @@ body
 	font-family: Verdana;
 }
 
+.flexy
+{
+	display:flex;
+	flex-flow:row wrap;
+}
+
+.flexobject
+{
+	margin:10px auto;
+}
+
 table
 {
 	width:100%;
@@ -13,7 +24,8 @@ table
 
 #wrapper
 {
-	width:660px;
+	min-width:350px;
+	max-width:660px;
 	margin:auto;
 }
 
