@@ -15,7 +15,7 @@
 			<h4>How do I take part?</h4>
 			<p>Each week, there will be a category such as "colors" or "sports mascots", and you will be presented with a series of this-or-that options where you have to decide which you like more or which you think is better. These votes will be combined to form a total rating, which gets updated throughout the week. It's that simple!</p>
 			<h4>What if I don't know about something?</h4>
-			<p>A lot of times, there'll be links for more information if you're so inclined. If you're really stuck, just press the button that says you don't know enough to make a decision, and that matchup will be skipped. But what's the fun in that? Go with your gut instinct! No one said there had to be rigerous criteria on how to decide.</p>
+			<p>A lot of times, there'll be links for more information if you're so inclined. If you're really stuck, just press the button that says you don't know enough to make a decision, and that matchup will be skipped. But what's the fun in that? Go with your gut instinct! No one said there had to be rigorous criteria on how to decide.</p>
 			<h4>Why can I only vote so many times?</h4>
 			<p>I don't want one person mindlessly clicking for an hour to skew the results. I want to give people plenty of chances to vote, since the more data there are the better the final rankings will be, but ideally I'd like everyone to hold more or less the same amount of sway over the final results.</p>
 			<h4>How often are these votes done?</h4>
