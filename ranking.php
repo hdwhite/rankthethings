@@ -35,7 +35,7 @@ while($curteam = $query->fetch_assoc())
 					foreach($entrants as $e)
 						if($e['code'] ==  $curentry)
 							$fullname = $e['name'];
-					printf("<tr class=\"row%d\"><th>%d</th><td style=\"width: 200px\">%s</td><td>%.3f</td></tr>", ++$i, $i, $fullname, $currating);
+					printf("<tr class=\"row%d\"><th>%d</th><td style=\"width: 200px; text-align:left\">%s</td><td>%.3f</td></tr>", ++$i, $i, $fullname, $currating);
 				}
 				?>
 			</table>

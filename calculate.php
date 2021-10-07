@@ -90,7 +90,7 @@ while(abs($average) > pow(10, -10))
 }
 
 # Taking the log to make the numbers more human-readable
-$scale = function($n) use ($multiplier) { return log($n * $multiplier) + 5; };
+$scale = function($n) use ($multiplier) { return log($n * $multiplier, 2) + 5; };
 $ratings = array_map($scale, $ratings);
 
 echo("--- New run at $runtime ---");
