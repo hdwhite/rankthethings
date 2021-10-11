@@ -30,6 +30,9 @@ $entry2 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][
 	<body>
 		<div id="wrapper">
 			<h2><?=$topic ?></h2>
+			<?php if(isset($description)) { ?>
+			<p><?=$description ?></p>
+			<?php } ?>
 			<form method="post" action="action.php">
 				<input type="hidden" name="from" value="<?=$week ?>">
 				<input type="hidden" name="entry1" value="<?=$entry1 ?>">
@@ -38,18 +41,21 @@ $entry2 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][
 					<div class="flexobject">
 						<button class="entry" type="submit" name="button1"><img src="data/<?=$week ?>/<?=$entrants[$entry1]['code'] ?>.<?=$extension ?>" height="240" width="240"><br><?=$entrants[$entry1]['name'] ?></button>
 						<?php if($haslinks == 1) { ?>
-						<br><a href="<?=$entrants[$team1]['name'] ?>" target="_blank">More information</a>
+						<br><a href="<?=$entrants[$entry1]['link'] ?>" target="_blank">More information</a>
 						<?php } ?>
 					</div>
 					<div class="flexobject">
 						<button class="entry" type="submit" name="button2"><img src="data/<?=$week ?>/<?=$entrants[$entry2]['code'] ?>.<?=$extension ?>" height="240" width="240"><br><?=$entrants[$entry2]['name'] ?></button>
 						<?php if($haslinks == 1) { ?>
-						<br><a href="<?=$entrants[$team2]['name'] ?>" target="_blank">More information</a>
+						<br><a href="<?=$entrants[$entry2]['link'] ?>" target="_blank">More information</a>
 						<?php } ?>
 					</div>
 				</div>
 				<p><button class="unknown" type="submit" name="button3">I don't know enough about these things to make a decision</button></p>
 			</form>
+			<div class="progressbar">
+				<span style="width: <?=round(($_SESSION['ranks'][$week]->votes + 1)*100/$maxvotes, 0) ?>%"></span>
+			</div>
 			<p class="patreon"><a href="<?=$_rootpath ?>/faq" target="_blank">Frequently Asked Questions</a></p>
 			<p class="patreon"><a href="<?=$_rootpath ?>/rankings" target="_blank">Current rankings</a></p>
 		</div>
