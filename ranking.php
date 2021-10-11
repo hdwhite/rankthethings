@@ -2,10 +2,12 @@
 // Here we display the rankings
 // To prevent server load, the calulations are not done every time this page is loaded
 require_once("data/$week/matchdata.inc");
-$query = $mysqli->query("SELECT entry, rating FROM $_ratingdb WHERE week='$week' ORDER BY timestamp DESC, rating DESC LIMIT " . count($entrants));
+$query = $mysqli->query("SELECT week, entry, rating FROM (SELECT * FROM $_ratingdb ORDER BY timestamp DESC LIMIT 1000000) a GROUP BY week, entry ORDER BY week DESC, rating DESC");
 $ratings = array();
+for($i = 0; $i <= $week; $i++)
+	$ratings[$i] = array();
 while($curteam = $query->fetch_assoc())
-	$ratings[$curteam['entry']] = $curteam['rating'];
+	$ratings[$curteam['week']][$curteam['entry']] = $curteam['rating'];
 ?>
 <!doctype html>
 <html>
@@ -30,7 +32,7 @@ while($curteam = $query->fetch_assoc())
 			<table>
 				<?php
 				$i = 0;
-				foreach($ratings as $curentry => $currating)
+				foreach($ratings[$week] as $curentry => $currating)
 				{
 					foreach($entrants as $e)
 						if($e['code'] ==  $curentry)
@@ -44,6 +46,23 @@ while($curteam = $query->fetch_assoc())
 			<?php } ?>
 			<p class="patreon">Rankings are likely to fluctuate, especially early in the week, so be sure to check back Monday for final results and another series of votes.</p>
 			<p class="patreon"><a href="<?=$_rootpath ?>/faq" target="_blank">Frequently Asked Questions</a></p>
+			<h2>Previous Weeks</h2>
+			<?php
+			for($curweek = $week-1; $curweek >= 0; $curweek--)
+			{
+				require_once("data/$curweek/matchdata.inc");
+				echo("<h4>$topic</h4><table>");
+				$i = 0;
+				foreach($ratings[$curweek] as $curentry => $currating)
+				{
+					foreach($entrants as $e)
+						if($e['code'] ==  $curentry)
+							$fullname = $e['name'];
+					printf("<tr class=\"row%d\"><th>%d</th><td style=\"width: 200px; text-align:left\">%s</td><td>%.3f</td></tr>", ++$i, $i, $fullname, $currating);
+				}
+				echo("</table>");
+			}
+			?>
 			<p class="patreon"><a href="https://patreon.com/hdwhite" target="_blank">Support me on Patreon!</a></p>
 		</div>
 	</body>
