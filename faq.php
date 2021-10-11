@@ -23,7 +23,7 @@
 			<h4>How often are these votes done?</h4>
 			<p>A new poll will get released every Monday at 12 noon Eastern time.</p>
 			<h4>What do the ratings mean?</h4>
-			<p>Ratings are calulated using Maximum Likelihood (details coming soon), and adjusted for human readability. Essentially, a score of 5 is "average", and the higher the better. In theory it's possible to have a negative rating or one over 10, but they would be hard to achieve (and values of 0 and 10 don't actually have any meaning anyway).</p>
+			<p>Ratings are calulated using a <a href="https://hdwhite.org/blog/2021/10/rank-the-things-how-the-ratings-work-feat-math/" style="font-size:100%">maximum likelihood estimation</a>, and adjusted for human readability. Essentially, a score of 5 is "average", and the higher the better. In theory it's possible to have a negative rating or one over 10, but they would be hard to achieve (and values of 0 and 10 don't actually have any meaning anyway).</p>
 			<h4>Why isn't this or that thing in your ranking?</h4>
 			<p>I might exclude entries for several reasons, such as being too obscure, there being too many things already, or if it's something that I'd not feel comfortable putting in. Alternatively, I might have just forgotten.</p>
 			<h4>I have an idea for something you can do!</h4>
