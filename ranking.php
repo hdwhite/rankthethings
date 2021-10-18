@@ -25,6 +25,16 @@ while($curteam = $query->fetch_assoc())
 			.row3 { color: #8C7853; font-weight: bold; }
 		</style>
 		<title>Rankings of the Things!</title>
+		<script language="javascript">
+			function toggle(targetId)
+			{
+				target = document.getElementById(targetId);
+				if (target.style.display == "none")
+					target.style.display="";
+				else
+					target.style.display="none";
+			}
+			</script>
 	</head>
 	<body>
 		<div id="wrapper">
@@ -47,20 +57,23 @@ while($curteam = $query->fetch_assoc())
 			<p class="patreon">Rankings are likely to fluctuate, especially early in the week, so be sure to check back Monday for final results and another series of votes.</p>
 			<p class="patreon"><a href="<?=$_rootpath ?>/faq" target="_blank">Frequently Asked Questions</a></p>
 			<h2>Previous Weeks</h2>
+			<p>Click on a topic to show the full rankings.</p>
 			<?php
 			for($curweek = $week-1; $curweek >= 0; $curweek--)
 			{
 				require_once("data/$curweek/matchdata.inc");
-				echo("<h4>$topic</h4><table>");
+				echo("<h4><a href=\"javascript:toggle('week$curweek')\" style=\"text-decoration:none\">$topic</a></h4><table><thead>");
 				$i = 0;
 				foreach($ratings[$curweek] as $curentry => $currating)
 				{
 					foreach($entrants as $e)
 						if($e['code'] ==  $curentry)
 							$fullname = $e['name'];
+					if($i == 3)
+						echo("</thead><tbody id=\"week$curweek\" style=\"display:none\">");
 					printf("<tr class=\"row%d\"><th>%d</th><td style=\"width: 200px; text-align:left\">%s</td><td>%.3f</td></tr>", ++$i, $i, $fullname, $currating);
 				}
-				echo("</table>");
+				echo("</tbody></table>");
 			}
 			?>
 			<p class="patreon"><a href="https://patreon.com/hdwhite" target="_blank">Support me on Patreon!</a></p>
