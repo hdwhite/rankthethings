@@ -2,7 +2,7 @@
 // Here we display the rankings
 // To prevent server load, the calulations are not done every time this page is loaded
 require_once("data/$week/matchdata.inc");
-$query = $mysqli->query("SELECT week, entry, rating FROM (SELECT * FROM $_ratingdb ORDER BY timestamp DESC LIMIT 1000000) a GROUP BY week, entry ORDER BY week DESC, rating DESC");
+$query = $mysqli->query("SELECT week, entry, rating FROM (SELECT * FROM $_ratingdb ORDER BY timestamp DESC LIMIT 1000000) a GROUP BY week, entry ORDER BY week DESC, rating DESC, entry ASC");
 $ratings = array();
 for($i = 0; $i <= $week; $i++)
 	$ratings[$i] = array();

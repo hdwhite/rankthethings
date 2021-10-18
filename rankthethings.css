@@ -40,8 +40,9 @@ button.entry
 	border-radius:12px;
 	font-size:110%;
 	font-weight:bold;
-	padding: 20px 23px 0px;
+	padding:20px 23px 0px;
 	line-height:1.5;
+	max-width:286px;
 }
 
 button.unknown
@@ -50,6 +51,11 @@ button.unknown
 	color:royalblue;
 	border-radius:12px;
 	font-size:120%;
+}
+
+.infoembed
+{
+	padding-top:10px;
 }
 
 a
