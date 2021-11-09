@@ -33,14 +33,16 @@
 	}
 
 	// At this point, each entry will have matchups with the ones ahead and behind them on the list.
-	// From now on, each entry will get paird with the one 2 entries over (than 3, than 4 if necessary)
+	// From now on, each entry will get paired with the one 2 entries over (than 3, than 4 if necessary)
 	// This ensures there will be no repeat matchups
 	
-	for($gap = 2; $gap <= floor($numentries/2); $gap++)
+	for($gap = floor($numentries/2); $gap > 1; $gap--)
 	{
 		for($i = 0; $i < $numentries; $i++)
 		{
 			if($remaining == 0) break 2;
+			if($gap == $numentries/2 && $i == $numentries/2)
+				break;
 			$matchups[] = array($leftorder[$i], $leftorder[($i + $gap) % $numentries]);
 			$remaining--;
 		}
