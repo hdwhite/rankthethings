@@ -32,6 +32,7 @@ table
 button
 {
 	cursor: pointer;
+	-webkit-appearance: none
 }
 
 button.entry
