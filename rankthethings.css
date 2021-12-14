@@ -38,10 +38,9 @@ button.entry
 {
 	background-color:#FFFFFF;
 	border-radius:12px;
-	font-size:110%;
+	font-size:100%;
 	font-weight:bold;
 	padding:20px 23px 0px;
-	line-height:1.5;
 	max-width:286px;
 }
 
