@@ -1,4 +1,5 @@
 <?php
+// This generates the current matchup that gets displayed
 if (session_status() === PHP_SESSION_NONE)
     session_start();
 require_once("dbnames.inc");
@@ -14,11 +15,11 @@ if(!isset($_SESSION['ranks'][$week]))
 // If they've voted the max number of times, go to rankings
 if($_SESSION['ranks'][$week]->votes >= $maxvotes)
 {
+	// TODO: Return actual response headers
 	echo("     ");
 	exit;
 }
 
-# The vote page for each matchup. Here we load the entrants and have the user vote on them.
 $entry1 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][0];
 $entry2 = $_SESSION['ranks'][$week]->matchups[$_SESSION['ranks'][$week]->votes][1];
 ?>
