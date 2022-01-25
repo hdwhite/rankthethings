@@ -23,9 +23,10 @@ if(!isset($_SESSION['ranks'][$week]) || $_SESSION['ranks'][$week]->votes >= $max
 }
 
 // If you skip, then just add one to the number of votes
-if($_GET['skip'] == 1)
+if(isset($_GET['skip']) && $_GET['skip'] == 1)
 {
 	$_SESSION['ranks'][$week]->votes++;
+	require("fetchvotes.php");
 	exit();
 }
 
@@ -50,4 +51,5 @@ $stmt->execute();
 $_SESSION['ranks'][$week]->votes++;
 $stmt->close();
 echo($mysqli->error);
+require("fetchvotes.php");
 ?>

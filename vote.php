@@ -33,8 +33,6 @@ require_once("data/$week/matchdata.inc");
 				xhttp.open("GET", "sendvote.php?week=<?=$week ?>&winner=" + winner + "&loser=" + loser, true);
 				xhttp.send();
 				console.log(this.responseText);
-				xhttp.open("GET", "fetchvotes.php", true);
-				xhttp.send();
 			}
 
 			function skipvote()
@@ -42,8 +40,6 @@ require_once("data/$week/matchdata.inc");
 				xhttp.open("GET", "sendvote.php?week=<?=$week ?>&skip=1", true);
 				xhttp.send();
 				console.log(this.responseText);
-				xhttp.open("GET", "fetchvotes.php", true);
-				xhttp.send();
 			}
 
 			function toggle(targetId)
