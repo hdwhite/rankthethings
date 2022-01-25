@@ -27,9 +27,7 @@ session_set_cookie_params(365*24*60*60);
 session_start();
 
 # Now we figure out what page to display
-if($page == "index")
-	require_once("default.php");
-elseif($page == "vote")
+if($page == "vote")
 	require_once("vote.php");
 elseif($page == "faq")
 	require_once("faq.php");
